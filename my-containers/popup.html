@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>🗂 Мои контейнеры</h1>
+    <span id="total" class="muted"></span>
+  </header>
+
+  <div id="disabled-warning" hidden>
+    ⚠️ Контейнеры выключены в Firefox.<br>
+    Открой <b>about:preferences</b>, набери в поиске «контейнер»
+    и включи <b>«Включить контейнеры вкладок»</b>.
+  </div>
+
+  <section id="create-form">
+    <div class="row">
+      <input id="name" type="text" placeholder="Название (например: Работа)" maxlength="50">
+    </div>
+    <div class="row">
+      <select id="color" title="Цвет"></select>
+      <select id="icon" title="Значок"></select>
+      <input id="count" type="number" min="1" max="30" value="1" title="Сколько штук создать">
+      <button id="create" class="primary">Создать</button>
+    </div>
+    <div class="hint muted">Кол-во &gt; 1 → создастся пачка: «Название 1», «Название 2»… цвета чередуются.</div>
+  </section>
+
+  <section id="list-section">
+    <div class="row list-head">
+      <label class="select-all"><input type="checkbox" id="select-all"> выбрать все</label>
+      <span id="empty" class="muted" hidden>Пока пусто — создай первый 👆</span>
+    </div>
+    <ul id="list"></ul>
+  </section>
+
+  <footer>
+    <button id="delete-selected" class="danger" disabled>🗑 Удалить выбранные</button>
+  </footer>
+
+  <div id="confirm-bar" hidden>
+    <span id="confirm-text"></span>
+    <button id="confirm-yes" class="danger">Удалить</button>
+    <button id="confirm-no">Отмена</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

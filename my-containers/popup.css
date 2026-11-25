@@ -1,0 +1,73 @@
+:root { color-scheme: light dark; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  width: 390px;
+  margin: 0;
+  font: 13px/1.45 system-ui, "Segoe UI", sans-serif;
+  background: #f9f9fb;
+  color: #15141a;
+}
+
+header { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 12px 4px; }
+h1 { margin: 0; font-size: 15px; }
+.muted { opacity: .65; font-size: 12px; }
+
+#disabled-warning {
+  margin: 10px 12px; padding: 10px;
+  background: #fff3cd; color: #664d03;
+  border: 1px solid #ffe69c; border-radius: 8px;
+}
+
+section { padding: 6px 12px; }
+.row { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
+
+input[type="text"] { flex: 1; min-width: 0; }
+input, select, button {
+  font: inherit; padding: 5px 8px;
+  border: 1px solid #cfcfd8; border-radius: 6px;
+  background: #fff; color: inherit;
+}
+#count { width: 58px; }
+select { max-width: 115px; }
+
+button { cursor: pointer; }
+button:hover { filter: brightness(.95); }
+button:disabled { opacity: .5; cursor: default; }
+.primary { background: #7542e5; border-color: #7542e5; color: #fff; }
+.danger  { background: #e22850; border-color: #e22850; color: #fff; }
+
+.list-head { justify-content: space-between; }
+.select-all { display: flex; gap: 5px; align-items: center; }
+
+#list { list-style: none; margin: 0; padding: 0; max-height: 330px; overflow-y: auto; }
+#list li { display: flex; align-items: center; gap: 6px; padding: 5px 4px; border-radius: 8px; }
+#list li:hover { background: rgba(128,128,128,.12); }
+.dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.badge { flex: none; }
+#list button { padding: 2px 7px; }
+.del { background: transparent; border-color: transparent; }
+.del:hover { background: #e22850; color: #fff; }
+
+footer { padding: 8px 12px 12px; }
+#delete-selected { width: 100%; }
+
+#confirm-bar {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  display: flex; gap: 6px; align-items: center;
+  padding: 8px 10px;
+  background: #fff3cd; color: #664d03;
+  border-top: 2px solid #ffe69c;
+}
+#confirm-text { flex: 1; font-size: 12px; }
+
+@media (prefers-color-scheme: dark) {
+  body { background: #2b2a33; color: #fbfbfe; }
+  input, select, button { background: #42414d; border-color: #5b5b66; }
+  .primary { background: #7542e5; border-color: #7542e5; }
+  .danger  { background: #e22850; border-color: #e22850; }
+  .del { background: transparent; border-color: transparent; }
+  #disabled-warning, #confirm-bar { background: #4d3f14; color: #ffe9b3; border-color: #7a651f; }
+}
